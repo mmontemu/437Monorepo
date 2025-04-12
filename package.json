@@ -1,0 +1,22 @@
+{
+  "name": "437monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmontemu/437Monorepo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmontemu/437Monorepo/issues"
+  },
+  "homepage": "https://github.com/mmontemu/437Monorepo#readme",
+  "description": "",
+  "workspaces": [
+      "packages/*"
+  ]
+}
