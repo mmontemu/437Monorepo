@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+}
+header {
+    background-color: var(--background-color-header);
+    position: sticky;
+    padding: 1vw;
+    top: -10vh;
+    height:100%;
+    color:var(--text-color-header);
+}
+body {
+    background-color: var(--background-color);
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+a:link {
+    color:var(--link-color);
+}
+a:visited {
+    color:var(--link-color-visited);
+}
