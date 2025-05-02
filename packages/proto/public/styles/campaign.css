@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    justify-content:space-between;
+    text-align: center;
+    align-items: center;
+}
+.layoutGrid {
+    display: grid;
+    grid-template-columns: [players] 1fr [characters] 1fr [dms] 1fr [time-date] 1fr;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-top: 1em;
+}
+.players {
+    grid-column-start: players;
+}
+.characters {
+    grid-column-start: characters;
+}
+.dms {
+    grid-column-start: dms;
+}
+.time-date {
+    grid-column-start: time-date;
+}
+li {
+    margin: 0.5em 0cm;
+}
+.items {
+    margin: 0.5em 0cm;
+}
