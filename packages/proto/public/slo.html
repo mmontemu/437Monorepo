@@ -1,14 +1,70 @@
 <!doctype html>
-<html>
+<html lang="en">
+
     <head>
         <link rel="stylesheet" href="/styles/tokens.css" />
         <link rel="stylesheet" href="/styles/page.css" />
         <link rel="stylesheet" href="/styles/campaign.css" />
+        <script type="module">
+            function toggleLightMode(page, checked) {
+                page.classList.toggle("light-mode", checked);
+            }
+
+            document.body.addEventListener("light-mode", (event) =>
+                toggleLightMode(
+                    event.currentTarget,
+                    event.detail.checked
+                )
+            );
+
+
+            // const page = document.body;
+            //
+            // page.addEventListener("change", (event) => {
+            //     const checked = event.target.checked;
+            //     page.classList.toggle("light-mode", checked);
+            // });
+            //
+            // function toggleLightMode(target, checked) {
+            //     const customEvent = new CustomEvent(
+            //         "light-mode:toggle", {
+            //             bubbles: true,
+            //             detail: { checked },
+            //         });
+            //
+            //     target.dispatchEvent(customEvent);
+            // }
+
+        </script>
+        <script>
+            function relayEvent(event, customType, detail) {
+                const relay = event.currentTarget;
+                const customEvent = new CustomEvent(customType, {
+                    bubbles: true,
+                    composed: true,
+                    detail
+                });
+
+                console.log(
+                    `Relaying event from ${event.type}:`,
+                    customEvent
+                );
+
+                relay.dispatchEvent(customEvent);
+                event.stopPropagation();
+            }
+        </script>
       </head>
   <body>
     <header class="navbar">
         <h1 class = "title">R&D&D</h1>
         <h2>Campaign: SLO Campaign</h2>
+        <label
+                onchange="relayEvent(event, 'light-mode',
+                  {checked: event.target.checked})">
+            <input type="checkbox" autocomplete="off" />
+            Dark Mode
+        </label>
         <figure>
             <h2>
             <svg class="icon"><use href="/icons/dnd.svg#icon-profile" /></svg>
