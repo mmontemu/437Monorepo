@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+
+
+<!--      <script type="module">-->
+<!--          import {define} from "@calpoly/mustang";-->
+<!--          import { Character } from "/character.js";-->
+
+<!--          define({-->
+<!--              "player-element" : Character-->
+<!--          });-->
+<!--      </script>-->
+    <script type="module" crossorigin src="/assets/main-DGOJMOAw.js"></script>
+  </head>
+  <body>
+    <header>
+        <h1>List of Active Campaigns <svg class="icon"><use href="/icons/dnd.svg#icon-d20" /></svg></h1>
+
+    </header>
+    <player-element href="/public/john.html" src="https://upload.wikimedia.org/wikipedia/en/8/87/ShaggyRogers.png">
+        <p slot="characterName">
+            Joshua
+        </p>
+        <p slot="class">
+            Monk
+        </p>
+        <p slot="race">
+        Human (Variant)
+        </p>
+        <p slot="">
+
+        </p>
+    </player-element>
+    <ul>
+        <li>
+            <a href="public/slo.html">
+                Slo Campaign
+            </a>
+        </li>
+        <li>
+            <a href="public/invalid.html">
+                Fighting Adventure <svg class="icon"><use href="/icons/dnd.svg#icon-wizard" /></svg>
+            </a>
+        </li>
+        <li>
+            <a href="public/invalid.html">
+                Wishing Tree
+            </a>
+        </li>
+    </ul>
+    <p>
+        Text to test text color :)
+    </p>
+  </body>
+</html>

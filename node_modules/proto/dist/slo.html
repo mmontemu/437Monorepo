@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="/styles/tokens.css" />
+        <link rel="stylesheet" href="/styles/page.css" />
+        <link rel="stylesheet" href="/styles/campaign.css" />
+        <script type="module">
+            function toggleLightMode(page, checked) {
+                page.classList.toggle("light-mode", checked);
+            }
+
+            document.body.addEventListener("light-mode", (event) =>
+                toggleLightMode(
+                    event.currentTarget,
+                    event.detail.checked
+                )
+            );
+
+
+            // const page = document.body;
+            //
+            // page.addEventListener("change", (event) => {
+            //     const checked = event.target.checked;
+            //     page.classList.toggle("light-mode", checked);
+            // });
+            //
+            // function toggleLightMode(target, checked) {
+            //     const customEvent = new CustomEvent(
+            //         "light-mode:toggle", {
+            //             bubbles: true,
+            //             detail: { checked },
+            //         });
+            //
+            //     target.dispatchEvent(customEvent);
+            // }
+
+        </script>
+        <script>
+            function relayEvent(event, customType, detail) {
+                const relay = event.currentTarget;
+                const customEvent = new CustomEvent(customType, {
+                    bubbles: true,
+                    composed: true,
+                    detail
+                });
+
+                console.log(
+                    `Relaying event from ${event.type}:`,
+                    customEvent
+                );
+
+                relay.dispatchEvent(customEvent);
+                event.stopPropagation();
+            }
+        </script>
+      </head>
+  <body>
+    <header class="navbar">
+        <h1 class = "title">R&D&D</h1>
+        <h2>Campaign: SLO Campaign</h2>
+        <label
+                onchange="relayEvent(event, 'light-mode',
+                  {checked: event.target.checked})">
+            <input type="checkbox" autocomplete="off" />
+            Dark Mode
+        </label>
+        <figure>
+            <h2>
+            <svg class="icon"><use href="/icons/dnd.svg#icon-profile" /></svg>
+            </h2>
+            <figcaption>
+                <p>ProfileName</p>
+            </figcaption>
+        </figure>
+    </header>
+    <div class="layoutGrid">
+        <div class="players">
+            <h2>
+                Players
+            </h2>
+            <hr/>
+            <ul>
+                <li><h3><a href="john.html">John Player</a></h3></li>
+                <li><h3><a href="john.html">John Player</a></h3></li>
+                <li><h3><a href="john.html">John Player</a></h3></li>
+            </ul>
+        </div>
+        <div class="characters">
+            <h2>
+                Characters
+            </h2>
+            <hr/>
+            <ul>
+                <li><h3><a href="larry.html">Larry the Unseen</a></h3></li>
+                <li><h3><a href="larry.html">Larry the Unseen</a></h3></li>
+                <li><h3><a href="larry.html">Larry the Unseen</a></h3></li>
+            </ul>
+        </div>
+        <div class="dms">
+            <h2>
+                DM(s)
+            </h2>
+            <hr/>
+            <ul>
+                <li><h3><a href="johnPerson.html">John Player</a></h3></li>
+            </ul>
+        </div>
+        <div class="time-date">
+            <h2>
+                Time
+            </h2>
+            <hr/>
+            <p class="items">Time For Session</p>
+            <hr/>
+            <h2>
+                Date
+            </h2>
+            <hr/>
+            <p class="items">Date of Session</p>
+        </div>
+    </div>
+    <!-- <header>
+        <h1>SLO Campaign</h1>
+    </header>
+    <h2>List of Players</h2>
+    <ul>
+        <li>
+            <a href="john.html">
+                John Player
+            </a>
+        </li>
+    </ul>
+    <h2>List of Characters</h2>
+    <ul>
+        <li>
+            <a href="larry.html">
+                Larry the Unseen
+            </a>
+        </li>
+    </ul>
+    <h2>Location</h2>
+    <ul>
+        <li>
+            <a href="mhouse.html">
+                Michael's House
+            </a>
+        </li>
+    </ul>
+    <h2>Time</h2>
+    <ul>
+        <li>
+            <p>
+                1pm Every Saturday
+            </p>
+        </li>
+    </ul> -->
+
+  </body>
+</html>
