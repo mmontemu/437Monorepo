@@ -23,10 +23,10 @@
 <!--      </script>-->
       <script type="module">
           import { define } from "@calpoly/mustang";
-          import { CharacterElement } from "/src/character.ts";
+          import { CharElement } from "/src/characterLab9";
 
           define({
-              "player-element": CharacterElement
+              "player-element": CharElement
           });
       </script>
   </head>
@@ -35,19 +35,7 @@
         <h1>List of Active Campaigns <svg class="icon"><use href="/icons/dnd.svg#icon-d20" /></svg></h1>
 
     </header>
-    <player-element href="/public/john.html" src="https://upload.wikimedia.org/wikipedia/en/8/87/ShaggyRogers.png">
-        <p slot="characterName">
-            Joshua
-        </p>
-        <p slot="class">
-            Monk
-        </p>
-        <p slot="race">
-        Human (Variant)
-        </p>
-        <p slot="">
-
-        </p>
+    <player-element src="public/data/joshua.json">
     </player-element>
     <ul>
         <li>

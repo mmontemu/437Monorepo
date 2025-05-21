@@ -1,0 +1,16 @@
+[{
+  "characterName": "Joshua",
+  "pfpLink": "https://upload.wikimedia.org/wikipedia/en/8/87/ShaggyRogers.png",
+  "class": "Monk",
+  "race": "Human (Variant)",
+  "playerName": "John Person",
+  "playerLink": "public/john.html"
+},
+  {
+    "characterName": "Glaive",
+    "pfpLink": "https://m.media-amazon.com/images/I/71XSR3+Lb2L._AC_UF1000,1000_QL80_DpWeblab_.jpg",
+    "class": "Fighter",
+    "race": "Custom Lineage",
+    "playerName": "John Person",
+    "playerLink": "public/john.html"
+  }]
