@@ -1,0 +1,13 @@
+### This is a comment
+POST http://localhost:3000/api/characters
+Content-Type: application/json
+
+{
+  "characterName": "Bolken",
+  "pfpLink": "https://thumbs.dreamstime.com/b/cartoon-dwarf-miner-illustration-82503671.jpg",
+  "class": "Wizard",
+  "race": "Dwarf",
+  "playerName": "John Person 2",
+  "playerLink": "public/john.html"
+}
+

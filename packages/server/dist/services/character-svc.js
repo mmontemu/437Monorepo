@@ -16,16 +16,14 @@ var __copyProps = (to, from, except, desc) => {
   return to;
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-var character_svs_exports = {};
-__export(character_svs_exports, {
-  default: () => character_svs_default
+var character_svc_exports = {};
+__export(character_svc_exports, {
+  default: () => character_svc_default
 });
-module.exports = __toCommonJS(character_svs_exports);
+module.exports = __toCommonJS(character_svc_exports);
 var import_mongoose = require("mongoose");
-var import_mongodb = require("mongodb");
 const CharacterSchema = new import_mongoose.Schema(
   {
-    _id: { type: import_mongodb.ObjectId, required: true },
     characterName: { type: String, required: true, trim: true },
     pfpLink: { type: String, required: true, trim: true },
     class: { type: String, required: true, trim: true },
@@ -50,4 +48,23 @@ async function get(charName) {
     throw `${charName} Not Found`;
   }
 }
-var character_svs_default = { index, get };
+function create(json) {
+  const t = new CharacterModel(json);
+  return t.save();
+}
+function update(userid, traveler) {
+  return CharacterModel.findOneAndUpdate({ userid }, traveler, {
+    new: true
+  }).then((updated) => {
+    if (!updated) throw `${userid} not updated`;
+    else return updated;
+  });
+}
+function remove(userid) {
+  return CharacterModel.findOneAndDelete({ userid }).then(
+    (deleted) => {
+      if (!deleted) throw `${userid} not deleted`;
+    }
+  );
+}
+var character_svc_default = { index, get, create, update, remove };

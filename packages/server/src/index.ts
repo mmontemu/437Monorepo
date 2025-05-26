@@ -4,13 +4,16 @@ import { connect } from "./services/mongo";
 // src/index.ts
 // at the top:
 import {ObjectId} from "mongodb";
-import Characters from "./services/character-svs";
-
+import Characters from "./services/character-svc";
+import characters from "./routes/characters";
 const app = express();
 const port = process.env.PORT || 3000;
 const staticDir = process.env.STATIC || "public";
 
-connect("cluster0");
+app.use(express.json());
+app.use("/api/characters", characters);
+
+connect("characters");
 
 app.use(express.static(staticDir));
 
@@ -20,10 +23,10 @@ app.get("/hello", (req: Request, res: Response) => {
 });
 
 // with the other routes:
-app.get("/character/:id", (req: Request, res: Response) => {
-    const { id } = req.params;
-
-    Characters.get({ _id: new ObjectId(id) }).then((data) => {
+app.get("/characters/:name", (req: Request, res: Response) => {
+    const { name } = req.params;
+    Characters.get(name).then((data) => {
+        console.log(data);
         if (data) res
             .set("Content-Type", "application/json")
             .send(JSON.stringify(data));
