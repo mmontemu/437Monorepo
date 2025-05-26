@@ -1,4 +1,4 @@
-### This is a comment
+### Adding character data
 POST http://localhost:3000/api/characters
 Content-Type: application/json
 
@@ -11,3 +11,11 @@ Content-Type: application/json
   "playerLink": "public/john.html"
 }
 
+### posting account/auth stuff
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "mvmonte",
+  "password": "help"
+}

@@ -1,17 +1,21 @@
 // src/index.ts
 import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
+import path from 'path';
 // src/index.ts
 // at the top:
 import {ObjectId} from "mongodb";
 import Characters from "./services/character-svc";
 import characters from "./routes/characters";
+import auth, { authenticateUser } from "./routes/auth";
+
 const app = express();
 const port = process.env.PORT || 3000;
 const staticDir = process.env.STATIC || "public";
 
 app.use(express.json());
-app.use("/api/characters", characters);
+
+app.use("/api/travelers", authenticateUser, characters);
 
 connect("characters");
 
@@ -34,6 +38,8 @@ app.get("/characters/:name", (req: Request, res: Response) => {
             .status(404).send();
     });
 });
+
+app.use("/auth", auth);
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

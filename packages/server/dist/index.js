@@ -25,11 +25,12 @@ var import_express = __toESM(require("express"));
 var import_mongo = require("./services/mongo");
 var import_character_svc = __toESM(require("./services/character-svc"));
 var import_characters = __toESM(require("./routes/characters"));
+var import_auth = __toESM(require("./routes/auth"));
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
 app.use(import_express.default.json());
-app.use("/api/characters", import_characters.default);
+app.use("/api/travelers", import_auth.authenticateUser, import_characters.default);
 (0, import_mongo.connect)("characters");
 app.use(import_express.default.static(staticDir));
 app.get("/hello", (req, res) => {
@@ -43,6 +44,7 @@ app.get("/characters/:name", (req, res) => {
     else res.status(404).send();
   });
 });
+app.use("/auth", import_auth.default);
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
