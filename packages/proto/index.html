@@ -22,34 +22,40 @@
 <!--          });-->
 <!--      </script>-->
       <script type="module">
-          import { define } from "@calpoly/mustang";
+          import { define, Auth } from "@calpoly/mustang";
           import { CharElement } from "/src/characterLab9";
 
           define({
-              "player-element": CharElement
+              "blz-header": HeaderElement,
+
+          });
+
+          define({
+              "player-element": CharElement,
+              "mu-auth": Auth.Provider
           });
       </script>
   </head>
   <body>
+  <mu-auth provides="blazing:auth">
     <header>
         <h1>List of Active Campaigns <svg class="icon"><use href="/icons/dnd.svg#icon-d20" /></svg></h1>
-
     </header>
-    <player-element src="public/data/joshua.json">
+    <player-element src="/data/joshua.json">
     </player-element>
     <ul>
         <li>
-            <a href="public/slo.html">
+            <a href="/slo.html">
                 Slo Campaign
             </a>
         </li>
         <li>
-            <a href="public/invalid.html">
+            <a href="/invalid.html">
                 Fighting Adventure <svg class="icon"><use href="/icons/dnd.svg#icon-wizard" /></svg>
             </a>
         </li>
         <li>
-            <a href="public/invalid.html">
+            <a href="/invalid.html">
                 Wishing Tree
             </a>
         </li>
@@ -57,5 +63,6 @@
     <p>
         Text to test text color :)
     </p>
+  </mu-auth>
   </body>
 </html>

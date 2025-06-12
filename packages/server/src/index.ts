@@ -8,6 +8,8 @@ import {ObjectId} from "mongodb";
 import Characters from "./services/character-svc";
 import characters from "./routes/characters";
 import auth, { authenticateUser } from "./routes/auth";
+import fs from "node:fs/promises";
+
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,11 +17,20 @@ const staticDir = process.env.STATIC || "public";
 
 app.use(express.json());
 
-app.use("/api/travelers", authenticateUser, characters);
+app.use("/app", (req: Request, res: Response) => {
+    const indexHtml = path.resolve(staticDir, "index.html");
+    fs.readFile(indexHtml, { encoding: "utf8" }).then((html) =>
+        res.send(html)
+    );
+});
+
+app.use(express.static(staticDir));
+
+
+app.use("/api/characters", authenticateUser, characters);
 
 connect("characters");
 
-app.use(express.static(staticDir));
 
 
 app.get("/hello", (req: Request, res: Response) => {
@@ -27,7 +38,7 @@ app.get("/hello", (req: Request, res: Response) => {
 });
 
 // with the other routes:
-app.get("/characters/:name", (req: Request, res: Response) => {
+app.get("characters/:name", (req: Request, res: Response) => {
     const { name } = req.params;
     Characters.get(name).then((data) => {
         console.log(data);

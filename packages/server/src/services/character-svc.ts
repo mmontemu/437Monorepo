@@ -1,6 +1,6 @@
 // src/services/character-svc.ts
 import { Schema, model } from "mongoose";
-import { Character } from "../models/character";
+import { Character } from "../../models/character";
 import { ObjectId } from "mongodb";
 
 const CharacterSchema = new Schema<Character>(

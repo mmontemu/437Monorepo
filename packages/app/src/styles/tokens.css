@@ -1,0 +1,16 @@
+body {
+    --link-color: #a40e86;
+    --link-color-visited: #a4108e;
+    --background-color-header: #21897E;
+    --background-color: #3BA99C;
+    --text-color: #050505;
+    --text-color-header: #202020;
+}
+body.light-mode {
+    --link-color: #5bf179;
+    --link-color-visited: #5bef71;
+    --background-color-header: #de7681;
+    --background-color: #c45663;
+    --text-color: #fafafa;
+    --text-color-header: #dfdfdf;
+}

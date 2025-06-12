@@ -1,6 +1,6 @@
 // src/routes/travelers.ts
 import express, { Request, Response } from "express";
-import { Character } from "../models/character";
+import { Character } from "../../models/character";
 
 import CharacterSchema from "../services/character-svc";
 

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <style>
+          html {
+              height:100%;
+          }
+          body {
+              height:100%;
+              margin: 0;
+          }
+          header {
+              background-color: #21897e;
+              position: sticky;
+              top: -10vh;
+              color:#202020;
+              padding-left: 1vw;
+              padding-right: 1vw;
+              padding-top: 1vw;
+          }
+          .body-tag {
+              background-color:#3BA99C;
+              padding-left: 1vw;
+              padding-right: 1vw;
+              padding-top: 1vw;
+              height:100%;
+          }
+          .page {
+              height:100%;
+          }
+      </style>
+    <script type="module" crossorigin src="/assets/spa-CiEVSQ2E.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/lit-element-BeeCytRh.js">
+    <link rel="modulepreload" crossorigin href="/assets/state-B1cPsSqc.js">
+  </head>
+  <body>
+  <mu-history provides="rndnd:history">
+      <mu-auth provides="rndnd:auth" redirect="/login.html">
+          <mu-store provides="blazing:model">
+              <article class="page">
+                  <header>
+                  <nav-bar></nav-bar>
+                  </header>
+                  <div class="body-tag">
+                  <mu-switch></mu-switch>
+                  </div>
+              </article>
+          </mu-store>
+      </mu-auth>
+  </mu-history>
+  </body>
+</html>
+
+
+<!--          <script type="module">-->
+<!--              function toggleLightMode(page, checked) {-->
+<!--                  page.classList.toggle("light-mode", checked);-->
+<!--              }-->
+
+<!--              document.body.addEventListener("light-mode", (event) =>-->
+<!--                  toggleLightMode(-->
+<!--                      event.currentTarget,-->
+<!--                      event.detail.checked-->
+<!--                  )-->
+<!--              );-->
+<!--          </script>-->
+<!--          <script>-->
+<!--              function relayEvent(event, customType, detail) {-->
+<!--                  const relay = event.currentTarget;-->
+<!--                  const customEvent = new CustomEvent(customType, {-->
+<!--                      bubbles: true,-->
+<!--                      composed: true,-->
+<!--                      detail-->
+<!--                  });-->
+
+<!--                  console.log(-->
+<!--                      `Relaying event from ${event.type}:`,-->
+<!--                      customEvent-->
+<!--                  );-->
+
+<!--                  relay.dispatchEvent(customEvent);-->
+<!--                  event.stopPropagation();-->
+<!--              }-->
+<!--          </script>-->
+
+<!--      <script type="module">-->
+<!--          import { define, Auth } from "@calpoly/mustang";-->
+<!--          import { CharElement } from "/src/characterLab9";-->
+
+<!--          define({-->
+<!--              "player-element": CharElement,-->
+<!--              "mu-auth": Auth.Provider-->
+<!--          });-->
+<!--      </script>-->
+
+<!--<header class="navbar">-->
+<!--    <h1 class = "title">R&D&D</h1>-->
+<!--    <h2>Homepage</h2>-->
+<!--    <label-->
+<!--            onchange="relayEvent(event, 'light-mode',-->
+<!--                  {checked: event.target.checked})">-->
+<!--        <input type="checkbox" autocomplete="off" />-->
+<!--        Dark Mode-->
+<!--    </label>-->
+<!--    <figure>-->
+<!--        <h2>-->
+<!--            <svg class="icon"><use href="/icons/dnd.svg#icon-profile" /></svg>-->
+<!--        </h2>-->
+<!--        <figcaption>-->
+<!--            <p>ProfileName</p>-->
+<!--        </figcaption>-->
+<!--    </figure>-->
+<!--</header>-->
+<!--<mu-auth provides="blazing:auth">-->
+<!--    <player-element src="/data/joshua.json">-->
+<!--    </player-element>-->
+<!--    <ul>-->
+<!--        <li>-->
+<!--            <a href="/slo.html">-->
+<!--                Slo Campaign-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="/invalid.html">-->
+<!--                Fighting Adventure <svg class="icon"><use href="/icons/dnd.svg#icon-wizard" /></svg>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="/invalid.html">-->
+<!--                Wishing Tree-->
+<!--            </a>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--    <p>-->
+<!--        Text to test text color :)-->
+<!--    </p>-->
+<!--</mu-auth>-->
+<!--</body>-->

@@ -1,0 +1,4 @@
+packages/server/.env
+node_modules
+packages/proto/node_modules
+packages/proto/dist

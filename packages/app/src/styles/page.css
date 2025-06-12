@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+header {
+    background-color: var(--background-color-header);
+    position: sticky;
+    top: -10vh;
+    height:100%;
+    color:var(--text-color-header);
+}
+body {
+    background-color: var(--background-color);
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+a:link {
+    color:var(--link-color);
+}
+a:visited {
+    color:var(--link-color-visited);
+}
+svg.icon {
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: middle;
+    fill: currentColor;
+}
